@@ -15,4 +15,15 @@ public class Operacions {
 		}
 		return aux;
 	}
+
+	public double factorial_recursiu(int n) {
+		if (n < 0) {
+			throw new IllegalArgumentException();
+		}
+		if (n == 1 || n == 0) {
+			return 1;
+		}
+		Operacions fmenos1 = new Operacions();
+		return n * fmenos1.factorial_iteratiu(n - 1);
+	}
 }
