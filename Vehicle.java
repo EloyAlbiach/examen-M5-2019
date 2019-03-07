@@ -1,6 +1,5 @@
 public class Vehicle {
-
-	  private static final int CAMBI_VELOCITAT = 10;
+	 private static final int CAMBI_VELOCITAT = 10;
 		private int vLimit;
 	    private int velocitatActual = 0;
 	    private boolean engegat = false;
@@ -45,5 +44,4 @@ public class Vehicle {
 	    public void repararVehicle (){
 	        System.out.println("El cotxe amb matrícula " + matricula + " està en reparació.");
 	    }
-
 }
