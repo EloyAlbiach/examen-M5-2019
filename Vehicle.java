@@ -25,18 +25,15 @@ public class Vehicle {
 		System.out.println("Matrícula = " + matricula);
 	}
 
-	public void acc() {
+	public void accODec() {
 		if (engegat && ((velocitatActual + 10) < vLimit)) {
 			velocitatActual += 10;
-		}
-		printSpecs();
-	}
-
-	public void dec() {
-		if (engegat && (velocitatActual > 0)) {
+		} else if (engegat && (velocitatActual > 0)) {
 			velocitatActual -= 10;
 		}
+
 		printSpecs();
+
 	}
 
 	public void repararVehicle() {
