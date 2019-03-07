@@ -1,3 +1,5 @@
+package eloyGit;
+
 public class Vehicle {
 
     private int velocitatLimit;
@@ -11,25 +13,25 @@ public class Vehicle {
     }
 
     public void engegar (){
-       engegat = true;
+       this.engegat = true;
        System.out.println(this.estatActual());
     }
 
     public void aturar (){
-        engegat = false;
+        this.engegat = false;
         System.out.println(this.estatActual());
     }
 
     public void accelerar (){
-        if (engegat && ((velocitatActual + 10) < velocitatLimit)){
-            velocitatActual += 10;
+        if (this.engegat && ((this.velocitatActual + 10) < this.velocitatLimit)){
+            this.velocitatActual += 10;
         }
         System.out.println(this.estatActual());
     }
 
     public void decelerar (){
-        if (engegat && (velocitatActual > 0)){
-            velocitatActual -= 10;
+        if (this.engegat && (this.velocitatActual > 0)){
+            this.velocitatActual -= 10;
         }
         System.out.println(this.estatActual());
     }
