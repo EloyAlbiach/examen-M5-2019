@@ -18,12 +18,12 @@ public class Vehicle {
         System.out.println("Matrícula = " + matricula);
     }
 
-    public void atura (){
+    public void aturarse (){
         engegat = false;
         System.out.println("M'he aturat");
     }
 
-    public void acc (){
+    public void accelerar (){
         if (engegat && ((velocitatActual + 10) < vLimit)){
             velocitatActual += 10;
         }
@@ -33,7 +33,7 @@ public class Vehicle {
         System.out.println("Matrícula = " + matricula);
     }
 
-    public void dec (){
+    public void deccelerar (){
         if (engegat && (velocitatActual > 0)){
             velocitatActual -= 10;
         }
