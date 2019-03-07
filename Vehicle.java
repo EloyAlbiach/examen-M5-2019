@@ -12,17 +12,20 @@ public class Vehicle {
 
 	public void engegaOAtura() {
 		if (engegat) {
-			printSpecs();
-		} else {
+			engegat = false;
 			System.out.println("M'he aturat");
+		} else {
+			engegat = true;
+			printSpecs();
 		}
 	}
 
 	private void printSpecs() {
 		System.out.println("Estic engegat.");
 		System.out.println("Velocitat actual = " + velocitatActual);
-		System.out.println("L√≠mit de velocitat = " + vLimit);
-		System.out.println("Matr√≠cula = " + matricula);
+		System.out.println("LÌmit de velocitat = " + vLimit);
+		System.out.println("MatrÌcula = " + matricula);
+		System.out.println("\n");
 	}
 
 	public void accODec() {
@@ -37,7 +40,7 @@ public class Vehicle {
 	}
 
 	public void repararVehicle() {
-		System.out.println("El cotxe amb matr√≠cula " + matricula + " est√† en reparaci√≥.");
+		System.out.println("El cotxe amb matrÌcula " + matricula + " est‡† en reparaciÛ.\n");
 	}
 
 }
