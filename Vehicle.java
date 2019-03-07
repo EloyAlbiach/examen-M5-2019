@@ -12,11 +12,15 @@ public class Vehicle {
 
     public void engega (){
        engegat = true;
-        System.out.println("Estic engegat.");
+        printSpecs();
+    }
+
+	private void printSpecs() {
+		System.out.println("Estic engegat.");
         System.out.println("Velocitat actual = " + velocitatActual);
         System.out.println("Límit de velocitat = " + vLimit);
         System.out.println("Matrícula = " + matricula);
-    }
+	}
 
     public void atura (){
         engegat = false;
@@ -27,20 +31,14 @@ public class Vehicle {
         if (engegat && ((velocitatActual + 10) < vLimit)){
             velocitatActual += 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+        printSpecs();
     }
 
     public void dec (){
         if (engegat && (velocitatActual > 0)){
             velocitatActual -= 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+        printSpecs();
     }
 
     public void repararVehicle (){
