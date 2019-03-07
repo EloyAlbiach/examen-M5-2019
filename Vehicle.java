@@ -1,3 +1,4 @@
+
 public class Vehicle {
 
     private int vLimit;
@@ -12,10 +13,7 @@ public class Vehicle {
 
     public void engega (){
        engegat = true;
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+       mensaje();
     }
 
     public void atura (){
@@ -27,21 +25,24 @@ public class Vehicle {
         if (engegat && ((velocitatActual + 10) < vLimit)){
             velocitatActual += 10;
         }
-        System.out.println("Estic engegat.");
+        mensaje();
+    }
+
+	private void mensaje() {
+		System.out.println("Estic engegat.");
         System.out.println("Velocitat actual = " + velocitatActual);
         System.out.println("Límit de velocitat = " + vLimit);
         System.out.println("Matrícula = " + matricula);
-    }
+	}
 
     public void dec (){
         if (engegat && (velocitatActual > 0)){
             velocitatActual -= 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+        mensaje();
     }
+
+
 
     public void repararVehicle (){
         System.out.println("El cotxe amb matrícula " + matricula + " està en reparació.");
