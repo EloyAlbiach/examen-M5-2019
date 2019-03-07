@@ -10,41 +10,35 @@ public class Vehicle {
         matricula = matriculaCotxe;
     }
 
-    public void engega (){
-       engegat = true;
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
-    }
-
-    public void atura (){
-        engegat = false;
-        System.out.println("M'he aturat");
-    }
-
-    public void acc (){
-        if (engegat && ((velocitatActual + 10) < vLimit)){
+    public void estatVehicle(String accio){
+    	if(accio == "engegat"){System.out.println("Estic engegat.");engegat = true;}
+    	if(accio == "atura"){System.out.println("M'he aturat");engegat = false;}
+    	if (engegat && ((velocitatActual + 10) < vLimit) && (accio == "acc")){
             velocitatActual += 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
-    }
-
-    public void dec (){
-        if (engegat && (velocitatActual > 0)){
+    	if (engegat && (velocitatActual > 0) && (accio == "dec")){
             velocitatActual -= 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+    	if (accio == "repararVehicle"){System.out.println("El cotxe amb matrícula " + matricula + " està en reparació.");}
+
+    	if (accio!="repararVehicle" || engegat == true) {
+            System.out.println("Velocitat actual = " + velocitatActual);
+            System.out.println("Límit de velocitat = " + vLimit);
+            System.out.println("Matrícula = " + matricula);
+		}
+
     }
 
-    public void repararVehicle (){
-        System.out.println("El cotxe amb matrícula " + matricula + " està en reparació.");
+    public static void main (String [ ] args) {
+
+    Vehicle v1 = new Vehicle(300, "miquelmartinleiva");
+
+    v1.estatVehicle("engegat");
+    v1.estatVehicle("atura");
+    v1.estatVehicle("acc");
+    v1.estatVehicle("dec");
+    v1.estatVehicle("repararVehicle");
+
     }
 
 }
