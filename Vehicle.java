@@ -37,14 +37,18 @@ public class Vehicle {
         if (engegat && (velocitatActual > 0)){
             velocitatActual -= 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+
     }
 
     public void repararVehicle (){
         System.out.println("El cotxe amb matrícula " + matricula + " està en reparació.");
+    }
+    
+    public void mensaje() {
+        System.out.println("Estic engegat.");
+        System.out.println("Velocitat actual = " + velocitatActual);
+        System.out.println("Límit de velocitat = " + vLimit);
+        System.out.println("Matrícula = " + matricula);
     }
 
 }
