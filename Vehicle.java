@@ -1,50 +1,54 @@
 public class Vehicle {
 
-    private int vLimit;
+    private int velocitatLimit;
     private int velocitatActual = 0;
     private boolean engegat = false;
-    private String matricula;
+    private String matriculaCotxe;
 
     public Vehicle (int velocitatLimit, String matriculaCotxe){
-        vLimit = velocitatLimit;
-        matricula = matriculaCotxe;
+        this.velocitatLimit = velocitatLimit;
+        this.matriculaCotxe = matriculaCotxe;
     }
 
-    public void engega (){
+    public void engegar (){
        engegat = true;
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+       System.out.println(this.estatActual());
     }
 
-    public void atura (){
+    public void aturar (){
         engegat = false;
-        System.out.println("M'he aturat");
+        System.out.println(this.estatActual());
     }
 
-    public void acc (){
-        if (engegat && ((velocitatActual + 10) < vLimit)){
+    public void accelerar (){
+        if (engegat && ((velocitatActual + 10) < velocitatLimit)){
             velocitatActual += 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+        System.out.println(this.estatActual());
     }
 
-    public void dec (){
+    public void decelerar (){
         if (engegat && (velocitatActual > 0)){
             velocitatActual -= 10;
         }
-        System.out.println("Estic engegat.");
-        System.out.println("Velocitat actual = " + velocitatActual);
-        System.out.println("Límit de velocitat = " + vLimit);
-        System.out.println("Matrícula = " + matricula);
+        System.out.println(this.estatActual());
     }
 
     public void repararVehicle (){
-        System.out.println("El cotxe amb matrícula " + matricula + " està en reparació.");
+        System.out.println("El cotxe amb matrícula " + matriculaCotxe + " està en reparació.");
     }
+
+	public String estatActual() {
+		
+		if (this.engegat) {
+			return "Estic engegat."
+					+ "\nVelocitat actual = " + this.velocitatActual
+					+ "\nLímit de velocitat = " + this.velocitatLimit
+					+ "\nMatrícula = " + this.matriculaCotxe;
+		}
+		else {
+			return "M'he aturat";
+		}
+	}
 
 }
