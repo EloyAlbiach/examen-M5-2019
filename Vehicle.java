@@ -1,13 +1,14 @@
 public class Vehicle {
 
+    private static final int MIN_VELOCITY = 10;
     private int vLimit;
     private int velocitatActual = 0;
     private boolean engegat = false;
     private String matricula;
 
     public Vehicle(int velocitatLimit, String matriculaCotxe) {
-        vLimit = velocitatLimit;
-        matricula = matriculaCotxe;
+        this.vLimit = velocitatLimit;
+        this.matricula = matriculaCotxe;
     }
 
     public void engegaAtura() {
@@ -18,15 +19,13 @@ public class Vehicle {
             this.engegat = false;
             System.out.println("M'he aturat");
         }
-
-
     }
 
     public void decAcc() {
-        if (engegat && (velocitatActual > 0)) {
-            velocitatActual -= 10;
-        } else if (engegat && ((velocitatActual + 10) < vLimit)) {
-            velocitatActual += 10;
+        if (this.engegat && (this.velocitatActual > 0)) {
+            this.velocitatActual -= MIN_VELOCITY;
+        } else if (this.engegat && ((this.velocitatActual + MIN_VELOCITY) < this.vLimit)) {
+            this.velocitatActual += MIN_VELOCITY;
         }
         this.toPrint();
     }
